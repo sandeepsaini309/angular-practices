@@ -7,8 +7,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./crud-employees.component.scss'],
 })
 export class CrudEmployeesComponent {
-  // !! i can also use Angular Material or NG-ZORRO,
-  // !! But for now i am using bootstrap cause of short time duration,
   public isEdit: boolean = false;
   private currentIndex: any = null;
   public employeeData: any[] = [
