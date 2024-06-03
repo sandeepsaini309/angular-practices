@@ -45,9 +45,18 @@
                         <input class="form-control" type="number" formControlName="pinCode">
                     </div>
                 </div>
+
+                <div class="col-md-6  mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" id="terms" type="checkbox" formControlName="terms">
+                        <label class="form-check-label" for="terms">Terms & conditions</label>
+                    </div>
+                </div>
             </div>
 
-            <button class="btn btn-primary w-100 mt-3 btn-success" [disabled]="!employeeFrom.valid">
+            <!-- <button class="btn btn-primary w-100 mt-3 btn-success" [disabled]="!employeeFrom.valid">
+                {{isEdit ? 'Edit' : 'Add'}} employee</button> -->
+            <button class="btn btn-primary w-100 mt-3 btn-success" [disabled]="!employeeFrom.get('terms')?.value">
                 {{isEdit ? 'Edit' : 'Add'}} employee</button>
         </form>
         <button class="btn btn-primary w-100 mt-3" (click)="clear()">clear</button>

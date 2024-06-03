@@ -33,6 +33,7 @@ export class CrudEmployeesComponent {
     address: ['', Validators.required],
     city: ['', Validators.required],
     pinCode: ['', [Validators.required, Validators.minLength(4)]],
+    terms: [false],
   });
 
   getEmployeeData() {
@@ -46,6 +47,10 @@ export class CrudEmployeesComponent {
 
   addEmployee() {
     try {
+      if (!this.employeeFrom.valid) {
+        alert('Please submit details..');
+        return;
+      }
       const value = this.employeeFrom.value;
       if (this.isEdit) {
         this.employeeData[this.currentIndex] = value;
