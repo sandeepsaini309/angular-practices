@@ -1,0 +1,31 @@
+<h3>li 1</h3>
+<ul class="list-group">
+    <li class="list-item" *ngFor="let item of list1; index as i">
+        <ng-container *ngIf="!item.value">
+            <label for="">{{item.name}}</label>
+            <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'toRight')">
+        </ng-container>
+    </li>
+</ul>
+
+<h3>li 2</h3>
+<ul class="list-group">
+    <li class="list-item" *ngFor="let item of list1; index as i">
+        <ng-container *ngIf="item.value">
+            <label for="">{{item?.name}}</label>
+            <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'toLeft')">
+        </ng-container>
+    </li>
+</ul>
+
+
+<!-- ? using pipe -->
+<h3>using pipe</h3>
+<p [innerHTML]="data | colorChange">
+</p>
+
+<h3>using directive</h3>
+<!-- ? using directive -->
+<p appColorChange>
+    {{data}}
+</p>
