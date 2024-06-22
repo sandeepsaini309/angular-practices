@@ -1,12 +1,22 @@
-import { Directive, ElementRef } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  Input,
+  Renderer2,
+} from '@angular/core';
 
 @Directive({
   selector: '[appColorChange]',
 })
 export class ColorChangeDirective {
-  constructor(private elRef: ElementRef) {}
-  target: string = 'india';
-  ngOnInit() {}
+  constructor(private elRef: ElementRef, private render: Renderer2) {}
+  @Input() appColorChange!: string;
+  search: string = '';
+
+  ngOnInit() {
+    this.search = this.appColorChange;
+  }
 
   ngAfterViewInit() {
     this.changeColor1();
@@ -14,14 +24,11 @@ export class ColorChangeDirective {
   }
 
   changeColor1() {
-    console.log('this.elRef.nativeElement', this.elRef.nativeElement);
     const text = this.elRef.nativeElement.innerHTML;
-    console.log('text', text);
     const newText = text.replaceAll(
       'india',
       `<span style="color:blue;">india</span>`
     );
-    console.log('newText', newText);
     this.elRef.nativeElement.innerHTML = newText;
   }
 
@@ -30,18 +37,26 @@ export class ColorChangeDirective {
     this.elRef.nativeElement.innerText
       .split(' ')
       .map((el: any) => {
-        console.log('el', el);
-        if (el === this.target) {
-          console.log('target', this.target);
+        if (el === this.search) {
           return el.replace(
-            this.target,
-            `<span style="color:blue">${this.target}</span>`
+            this.search,
+            `<span style="color:blue">${this.search}</span>`
           );
-          // return el.match(this.target)
-          //   ? `<span style="color:blue">${this.target}</span>`
+          //   ? `<span style="color:blue">${this.search}</span>`
           //   : el;
         }
       })
       .join(' ');
+  }
+
+  @HostListener('mouseover')
+  onHover() {
+    // this.elRef.nativeElement.color = 'red';
+    this.render.setStyle(this.elRef.nativeElement, 'color', 'red');
+  }
+  @HostListener('mouseout')
+  onHoverLeave() {
+    // this.elRef.nativeElement.color = '';
+    this.render.setStyle(this.elRef.nativeElement, 'color', '');
   }
 }
