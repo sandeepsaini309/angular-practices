@@ -12,6 +12,7 @@ import { ColorChangePipe } from './pipes/color-change.pipe';
 import { SignalsComponent } from './components/signals/signals.component';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { NavComponent } from './components/nav/nav.component';
+import { HtmlCssComponent } from './components/html-css/html-css.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { NavComponent } from './components/nav/nav.component';
     SignalsComponent,
     RxjsComponent,
     NavComponent,
+    HtmlCssComponent,
   ],
   imports: [
     BrowserModule,

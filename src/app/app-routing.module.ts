@@ -4,6 +4,7 @@ import { CrudEmployeesComponent } from './components/crud-employees/crud-employe
 import { SignalsComponent } from './components/signals/signals.component';
 import { TaskComponent } from './components/task/task.component';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
+import { HtmlCssComponent } from './components/html-css/html-css.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
   {
     path: 'rxjs',
     component: RxjsComponent,
+  },
+  {
+    path: 'html',
+    component: HtmlCssComponent,
   },
 ];
 
