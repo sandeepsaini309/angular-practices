@@ -20,7 +20,7 @@ import { NavComponent } from './components/nav/nav.component';
     ColorChangeDirective,
     TaskComponent,
     ColorChangePipe,
-    // SignalsComponent,
+    SignalsComponent,
     RxjsComponent,
     NavComponent,
   ],

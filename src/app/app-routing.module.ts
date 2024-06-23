@@ -17,11 +17,15 @@ const routes: Routes = [
   },
   {
     path: 'signals',
-    loadChildren: () =>
-      import('./components/signals/signals.module').then(
-        (m) => m.SignalsModule
-      ),
+    component: SignalsComponent,
   },
+  // {
+  //   path: 'signals',
+  //   loadChildren: () =>
+  //     import('./components/signals/signals.module').then(
+  //       (m) => m.SignalsModule
+  //     ),
+  // },
   {
     path: 'task',
     component: TaskComponent,
