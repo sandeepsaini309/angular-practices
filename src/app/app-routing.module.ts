@@ -8,7 +8,8 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
 const routes: Routes = [
   {
     path: '',
-    component: SignalsComponent,
+    pathMatch: 'full',
+    redirectTo: 'signals',
   },
   {
     path: 'crud',
@@ -16,7 +17,10 @@ const routes: Routes = [
   },
   {
     path: 'signals',
-    component: SignalsComponent,
+    loadChildren: () =>
+      import('./components/signals/signals.module').then(
+        (m) => m.SignalsModule
+      ),
   },
   {
     path: 'task',
