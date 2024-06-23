@@ -1,11 +1,30 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { CrudEmployeesComponent } from './components/crud-employees/crud-employees.component';
+import { SignalsComponent } from './components/signals/signals.component';
+import { TaskComponent } from './components/task/task.component';
+import { RxjsComponent } from './components/rxjs/rxjs.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: SignalsComponent,
+  },
+  {
+    path: 'crud',
+    component: CrudEmployeesComponent,
+  },
+  {
+    path: 'signals',
+    component: SignalsComponent,
+  },
+  {
+    path: 'task',
+    component: TaskComponent,
+  },
+  {
+    path: 'rxjs',
+    component: RxjsComponent,
   },
 ];
 
