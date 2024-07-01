@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-// interface optional {
-//   name: string;
-//   value: boolean;
-// }
+interface optional {
+  name: string;
+  value: boolean;
+}
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -34,14 +34,26 @@ export class TaskComponent {
     },
   ];
 
-  // list2: optional[] = [];
+  list2: optional[] = [];
 
   changeStatus(index: number, direction: string) {
-    console.log('1', index);
-    if (direction === 'toRight') {
+    console.log('index', index);
+    console.log('list1', this.list1);
+    if (direction === 'checked') {
       this.list1[index].value = true;
     } else {
       this.list1[index].value = false;
     }
+
+    // if (direction === 'checked') {
+    //   const matchedItem = this.list1.findIndex(
+    //     (el) => (el.name = this.list1[index].name)
+    //   );
+    //   console.log('matchedItem', matchedItem);
+    // }
+  }
+
+  popItem() {
+    this.list1.pop();
   }
 }

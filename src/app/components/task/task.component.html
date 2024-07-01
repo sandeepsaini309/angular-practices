@@ -1,29 +1,51 @@
-<h3>li 1</h3>
-<ul class="list-group">
-    <li class="list-item" *ngFor="let item of list1; index as i">
-        <ng-container *ngIf="!item.value">
-            <label for="">{{item.name}}</label>
-            <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'toRight')">
-        </ng-container>
-    </li>
-</ul>
+<h2>1) Create list of items that will moved on both sides when checked or unchecked.</h2>
+<button class="btn btn bg-primary" (click)="popItem()">delete</button>
+<div class="row">
+    <div class="col-6">
+        <h3>list Items 1</h3>
+        <ul class="list-group">
+            <ng-container *ngFor="let item of list1; index as i">
+                <li class="list-item" *ngIf="!item.value">
+                    <label for="">{{item.name}}</label>
+                    <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'checked')">
+                </li>
+            </ng-container>
+        </ul>
+    </div>
 
-<h3>li 2</h3>
-<ul class="list-group">
-    <li class="list-item" *ngFor="let item of list1; index as i">
-        <ng-container *ngIf="item.value">
-            <label for="">{{item?.name}}</label>
-            <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'toLeft')">
-        </ng-container>
-    </li>
-</ul>
+    <!-- <div class="col-6">
+        <h3>list 2</h3>
+        <ul class="list-group">
+            <ng-container *ngFor="let item of list1; index as i">
+                <li class="list-item" *ngIf="item.value">
+                    <label for="">{{item?.name}}</label>
+                    <input type="checkbox" name="" [value]="item.value" id="" (click)="changeStatus(i, 'unChecked')">
+                </li>
+            </ng-container>
+        </ul>
+    </div> -->
+    <div class="col-6">
+        <h3>list Items 2</h3>
+        <ul class="list-group">
+            <ng-container *ngFor="let item of list1; index as i">
+                <li class="list-item" *ngIf="item.value">
+                    <label for="{{item}}{{i}}">{{item?.name}}</label>
+                    <input type="checkbox" name="" [value]="item.value" id="{{item}}{{i}}"
+                        (click)="changeStatus(i, 'unChecked')" [checked]="item.value">
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>
+
 
 <!-- ? using pipe -->
-<h3>using pipe</h3>
+<h2>2) Change Text Color</h2>
+<h3>Using pipe</h3>
 <p [innerHTML]="data | colorChange:'india'">
 </p>
 
-<h3>using directive</h3>
+<h3>Using directive</h3>
 <!-- ? using directive -->
 <p appColorChange="india">
     {{data}}
