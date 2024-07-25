@@ -13,6 +13,8 @@ import { SignalsComponent } from './components/signals/signals.component';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HtmlCssComponent } from './components/html-css/html-css.component';
+import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
+// import { TableListComponent } from './components/table-list/table-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,8 @@ import { HtmlCssComponent } from './components/html-css/html-css.component';
     RxjsComponent,
     NavComponent,
     HtmlCssComponent,
+    DynamicFormComponent,
+    // TableListComponent,
   ],
   imports: [
     BrowserModule,

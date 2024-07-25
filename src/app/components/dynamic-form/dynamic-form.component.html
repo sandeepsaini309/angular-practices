@@ -1,0 +1,64 @@
+<form [formGroup]="formData">
+    <div formGroupName="userInfo">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" formControlName="name">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">age</label>
+                    <input type="text" id="name" class="form-control" formControlName="age">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mb-3">
+                    <label for="name" class="form-label">role</label>
+                    <input type="text" id="name" class="form-control" formControlName="role">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div formGroupName="countryInfo">
+        <div class="row">
+            <div class="col-md-6">
+                <label for="country">country:</label>
+                <select class="form-select" name="country" id="country" formControlName="country">
+                    <ng-container *ngFor="let country of countries">
+                        <option [value]="country">{{country}}</option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="city">City:</label>
+                <select class="form-select" name="city" id="city" formControlName="city"
+                    [disabled]="!availableCity.length">
+                    <ng-container *ngFor="let city of availableCity">
+                        <option [value]="city">{{city}}</option>
+                    </ng-container>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="name" class="form-label">Number Item</label>
+        <input type="text" id="name" class="form-control" formControlName="numItem">
+    </div>
+    <div formArrayName="skills">
+        <h3>skills</h3>
+        <ng-container *ngFor=" let item of getSkills.controls; index as i">
+            <div class="mb-3">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" id="name" class="form-control" [formControlName]="i">
+            </div>
+            <button class="btn btn-sm btn-outline-danger" (click)="deleteSkill(i)">delete</button>
+        </ng-container>
+    </div>
+    <div class="d-flex gap-2">
+        <button class="btn btn-primary" (click)="addSkills()">add Items</button>
+        <button class="btn btn-success" (click)="save()" [disabled]="!formData.valid">submit</button>
+        <button class="btn btn-secondary" (click)="addNumSkills()">num</button>
+    </div>
+</form>
