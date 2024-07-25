@@ -14,7 +14,7 @@ import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HtmlCssComponent } from './components/html-css/html-css.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-// import { TableListComponent } from './components/table-list/table-list.component';
+import { TableListComponent } from './components/table-list/table-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +28,7 @@ import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.com
     NavComponent,
     HtmlCssComponent,
     DynamicFormComponent,
-    // TableListComponent,
+    TableListComponent,
   ],
   imports: [
     BrowserModule,

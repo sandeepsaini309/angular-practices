@@ -6,7 +6,7 @@ import { TaskComponent } from './components/task/task.component';
 import { RxjsComponent } from './components/rxjs/rxjs.component';
 import { HtmlCssComponent } from './components/html-css/html-css.component';
 import { DynamicFormComponent } from './components/dynamic-form/dynamic-form.component';
-// import { TableListComponent } from './components/table-list/table-list.component';
+import { TableListComponent } from './components/table-list/table-list.component';
 
 const routes: Routes = [
   {
@@ -45,10 +45,10 @@ const routes: Routes = [
     path: 'form',
     component: DynamicFormComponent,
   },
-  // {
-  //   path: 'table-list',
-  //   component: TableListComponent,
-  // },
+  {
+    path: 'table-list',
+    component: TableListComponent,
+  },
 ];
 
 @NgModule({
