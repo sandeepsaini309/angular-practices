@@ -27,3 +27,23 @@
     width: calc(100% - 10px);
   }
 }
+
+.circle {
+  height: 100px;
+  width: 100px;
+  border: 10px solid blue;
+  border-radius: 50%;
+  border-top-color: red;
+  animation: spin 1s linear infinite;
+  // animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+@keyframes spin {
+  from {
+    // border-color: yellow;
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    // border-color: green;
+  }
+}
